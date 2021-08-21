@@ -40,12 +40,19 @@ exam: ln -s devops.sh huan-shortcut.sh  || tao shortcut cho file devops
 
 ----lenh timkiem----
 find /root/huannguyen -name *.sh -print   || tim file co duoi .sh
+
 find /root/huannguyen -name 'devops.sh'
+
 cat 'find /root/huannguyen -name 'devops.sh'' || tim ra hien thi ngay luon
+
 find /root/huannguyen -name 'devops.sh' -detele || tim xoa luon
+
 find /root/huannguyen -size -1M || tim file nho hon 1MB
+
 find /root/huannguyen -size +4M || tim file lon hon 4MB
+
 find /root/huannguyen -name 'devops.sh'
+
 find /root/huannguyen -mtime 4 // tim file chinh sua cach day 4 ngay
 
 ---tim thong tin file --
