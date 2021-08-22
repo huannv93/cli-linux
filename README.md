@@ -147,7 +147,64 @@ chown huannv:root devops.sh ||  chuyen quyen cho huannv
 
 
 ----bashshell-----
+-  cat devops/sh 2> /dev/null : neu loi thi ko hien thi loi, de tranh full man hinh
+-  echo ~  : ve root
+-  grep huannv /root/devops.sh : tim huannv 
+-  grep -nv huannv /root/devops.sh : tim huannv , hien thi ket qua co dong number
+-  grep - i huannv /root/devops.sh
+-  
+
+
+---User Management-----
+
+- root : full access, superuser
+- normal user : only some permission
+- services account:  ko dc quyen login., chi  dung cho 1 so services vd apache, zabbix user...
+ 
+--- file passwd----
+
+cat /etc/passwd
+
+cat /etc/passwd | grep root 
+
+
+
+[root@grafana ~]# cat /etc/passwd
+
+root:x:0:0:root:/root:/bin/bash
+
+- x : passwd duoc ma hoa, ko show xem dc -- check bang lenh cat /etc/shadow,  * : y nghia la user do da bi disable
+- 0  : user ID : root khi nao cung = 0 , normal user : id >1000 , sevrices account ID  <1000
+- 0 phia sau : group ID
+- root : decription 
+- /root : home dictory cua user
+- /bin/bash: bash shell
+
+
+cat /etc/shadow
+
+- shadow : bao ve passwd cho server, goi han thoi gian time life cua passwd
+
+root:$6$zY.5i/HyaYMdLfh1$3l4c8HY1oNBOdFhHdlZcnGfiA1xXPM.plZxbzFWypLS7WVulZnYN9gRrjtlJfY2y07uw0Cczo3PfWpARaBiMS0::0:99999:7:::
+
+- root: user name
+- : : passwd da dc ma hoa  :$6$zY.5i/HyaYMdLfh1$3l4c8HY1oNBOdFhHdlZcnGfiA1xXPM.plZxbzFWypLS7WVulZnYN9gRrjtlJfY2y07uw0Cczo3PfWpARaBiMS0:
+- blank : date doi passwd lan cuoi
+- 0
+- 99999 : maximum ngay het han cua user
+- :7 : so ngay nhan canh bao warring user can thay doi pass
+- : : thuong blank
+- 
+
+
+
+grafana:x:998:996:grafana user:/usr/share/grafana:/sbin/nologin
+
+zabbix:x:997:995:Zabbix Monitoring System:/var/lib/zabbix:/sbin/nologin
+
+ddclient:x:996:994:Dynamic DNS Client:/var/cache/ddclient:/sbin/nologin
 
 
 
 
+1
