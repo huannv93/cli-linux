@@ -180,6 +180,7 @@ root:x:0:0:root:/root:/bin/bash
 - /root : home dictory cua user
 - /bin/bash: bash shell
 
+- passwd root : doi pass cho root
 
 cat /etc/shadow
 
@@ -194,7 +195,50 @@ root:$6$zY.5i/HyaYMdLfh1$3l4c8HY1oNBOdFhHdlZcnGfiA1xXPM.plZxbzFWypLS7WVulZnYN9gR
 - 99999 : maximum ngay het han cua user
 - :7 : so ngay nhan canh bao warring user can thay doi pass
 - : : thuong blank
+-  ! : user dang bi khoa
 - 
+
+cat /etc/gshadow   : group shadow
+
+[root@grafana ~]# cat /etc/gshadow
+
+root:::
+
+- root: group name
+- ! : ko cho phep add user vao group nay
+- blank: co bao nhieu user admin, 1-2-3...
+-
+
+
+--- add user ---
+
+useradd --help
+
+cat /etc/default/useradd
+
+[root@grafana ~]# cat /etc/default/useradd
+# useradd defaults file
+GROUP=100        
+HOME=/home
+INACTIVE=-1
+EXPIRE=
+SHELL=/bin/bash
+SKEL=/etc/skel
+CREATE_MAIL_SPOOL=yes 
+
+vim  /etc/default/useradd
+
+chinh sua thong tin user
+
+- useradd huannv : them user huannv
+- passwd huannv  : doi password cho user
+- passwd --help : de xem chi tiet
+- passwd -l huannv : lock user huannv
+- passwd -u huannv : unlock user
+- userdel huannv : xoa user
+- userdel -r huannv : xoa luon home directory va user
+- 
+- useradd -D -b /home  huannv : thay doi Home cho user huannv
 
 
 
@@ -206,5 +250,76 @@ ddclient:x:996:994:Dynamic DNS Client:/var/cache/ddclient:/sbin/nologin
 
 
 
+-----lenh ps----
 
-1
+- process tren linux
+- ps --help
+
+- ps -aef : hien them nhieu thong tin trong process
+
+[root@grafana ~]# ps -aef
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  0 Jun21 ?        00:00:35 /usr/lib/systemd/systemd --switched-root --system --deserialize 22
+root         2     0  0 Jun21 ?        00:00:00 [kthreadd]
+root         4     2  0 Jun21 ?        00:00:00 [kworker/0:0H]
+root         6     2  0 Jun21 ?        00:00:13 [ksoftirqd/0]
+
+- ps -euf  
+
+- ps - U huannv : xem user huannv dang chay ps gi
+- top : hien thi process dong
+
+root@grafana ~]# top
+
+top - 15:41:10 up 63 days,  6:07,  1 user,  load average: 0.00, 0.01, 0.05
+Tasks: 162 total,   2 running, 160 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem :  1015020 total,   348188 free,   189876 used,   476956 buff/cache
+KiB Swap:  1679356 total,  1679356 free,        0 used.   615356 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S %CPU %MEM     TIME+ COMMAND                                                                         
+    1 root      20   0  128008   6676   4160 S  0.0  0.7   0:35.23 systemd                                                                         
+    2 root      20   0       0      0      0 S  0.0  0.0   0:00.43 kthreadd                                                                        
+    4 root       0 -20       0      0      0 S  0.0  0.0   0:00.00 kworker/0:0H                                                                    
+    6 root      20   0       0      0      0 S  0.0  0.0   0:13.80 ksoftirqd/
+
+
+- PR : prority : uu dien
+- NI : 
+-VIRT : o dia ao de chay process
+- RES:  
+- S : sleep
+-  15:41:10 up 63 days : thoi gian uptime server
+= 1 user : so user dang login
+- 
+
+
+- iotop : hien thi thong tin o dia, can cai them package ko co san
+
+ yum install iotop
+
+
+---skill process---
+
+- kill -l 152    || 152 la PID cua process
+
+- man kill : xem more detail
+
+- kill -9 PID : 
+
+- cat /etc/crontab : thuc hien lenh tu dong
+
+-  yum list installed | grep crond :   lenh xem app da dc cai tren he thong chua ?
+
+-  crontab -l
+
+-  ls /var/log/cron : check log cron
+
+-  crontab -r : remove
+
+
+
+
+
+
+
