@@ -317,7 +317,139 @@ KiB Swap:  1679356 total,  1679356 free,        0 used.   615356 avail Mem
 
 -  crontab -r : remove
 
+- rontab (CRON TABLE) là một tiện ích cho phép thực hiện các tác vụ một cách tự động theo định kỳ, ở chế độ nền của hệ thống. Crontab là một file chứa đựng bảng biểu (schedule) của các entries được chạy.
 
+- 
+
+
+
+
+------SSH ------
+
+
+- ls -la /etc/ssh/
+- cat /etc/ssh/sshd_config
+
+- netstat -mlpt : xem cac port
+
+
+- cat ~/.ssh/id_rsa.pub
+
+- vi ~/.ssh/id_rsa.pub   : copy cai nay
+
+- vi ~/.ssh/authoried_keys   : len server, sau nay se ko can nhap pass ssh
+
+- scp devops.sh root@10.8.0.1:/root/   : scp file
+
+- openssh : 
+- cat /etc/ssh/sshd_config
+-  
+- [root@grafana ~]# rpm -qa | grep ssh
+
+libssh2-1.8.0-3.el7.x86_64
+openssh-clients-7.4p1-21.el7.x86_64
+openssh-7.4p1-21.el7.x86_64
+openssh-server-7.4p1-21.el7.x86_64
+
+
+- ssh -V
+- change port default 22:
+
+vi /etc/ssh/sshd_config : doi port trong file config
+
+systemctl restart sshd : restart de apply thay doi
+
+-----rpm --------
+
+thuoc ve redhad
+de quan ly ung dung
+
+de truy cuu thong tin trong he thong
+
+
+- rpm -qa | grep ssh 
+
+q: query , a: all 
+
+
+- package manager:
+
+ubunt : apt
+
+centos : yum 
+
+yum install <tenpackage>
+
+yum remove <tenpackage> : go app
+
+yum check-update : check update cua cac app
+
+yum update : chay update het
+
+yum search http 
+
+yum list installed | grep < >    : list cac app da dc cai vao
+
+yum grouplist
+
+
+yum history installed   : check lich su cai dat
+
+yum history installed list
+
+----2 cach cai dat-----
+
+- yum install : len repo lay file moi nhat ve cai, nhu appstore or server ko di internet duoc
+
+- tai ve bang tay co duoi .rmp : co the tuy chon version tai ve
++ downloand file cai dat .rmp  : wget ....
++ rpm -ivh <file.rpm>
+
++ rpm -e <tenapp>  : go ung dung
+
+rpm -qa : query toan bo file r
+
+rpm -qa > /tmp/installedpackages.text : luu toan bo ra 
+
+
+rpm -qa > /tmp/installedpackages.text | wc - l : list co bao nhieu file de so sanh
+----runlevel----
+
+runlevel : xem dang o level bnhieu
+
+init runlevel : thay doi level cho user
+
+
+cd /usr/lib/systemd/system 
+
+ls -l runlevel* :    xem level 
+
+systemctl reboot
+
+systemctl halt : pause system
+
+systemctl power : shhutdown he thong
+
+
+---disk management ---
+
+lsblk
+
+yum -y install gdisk
+
+gdisk
+
+df -h 
+
+pvcreate /dev/sda3
+
+
+
+
+--- netwoking------
+
+
+systemtcl status network
 
 
 
