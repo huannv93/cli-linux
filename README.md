@@ -454,4 +454,63 @@ systemtcl status network
 
 
 
+--------bashscrip------------------
+
+    SHELL Scripts:
+
+
+- file.sh giong file .bat tren windows 
+
+ln -s file.sh shorcut : tao shortcut cho file ssh
+
+- echo $PACH
+
+- VARIABLE:
+
+Biến (Variables) trong Shell Script
+
++ Explicit : VAR=value
++ Read input frome user : read VAR
++ From Command : VAR=$(pwd)
+VAR='pwd'
+
+#! /bin/bash
+
+
+echo -n "Your Name"
+read NAME
+
+echo -n "Your Age"
+read AGE
+
+echo
+echo =========Employee Statistic===========
+echo NAME: $NAME
+echo AGE: $AGE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
