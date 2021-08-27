@@ -488,25 +488,191 @@ echo =========Employee Statistic===========
 echo NAME: $NAME
 echo AGE: $AGE
 
+- Math Caculation:
+
++ let
+
+[root@grafana ~]# vi let-command.sh 
+
+#! /bin/bash
+
+NUMBER=7
+
+let RESUTL=NUMBER+7
+
+echo $RESUTS++
+
+NUMBERS=8
+
+let NUMBERS++
+
+echo $NUMBERS
+
+
+let NUMBERS--
+
+echo $NUMBERS
+
+
++ comamnd  (()) OR []
+
+RESULT=$((NUMBER+5))
+
+HOAC : RESULT=$[NUMBER+5]
+
+
++ COMMAND expr
+
+NUMBER=5
+
+RESULT=$(expr$NUMBER+8)
+
+echo $RESULT
+
++ COMMAND BC:
+
+
+--- IF STATEMENTS & DECISION MAKING----
+
+if 
+
+then : neu dung thi 
+
+elif : if sau cua if
+
+else : neu sai thi
+
+fi : dong ket qua vong lap
+
+if ! : phu dinh
+
+
+- vidu:
+
+[root@grafana ~]# cat if-command.sh 
+
+#! /bin/bash
+
+echo -n Your Age:
+ 
+read AGE
+
+if [ $AGE -gt 10 ]
+
+# -gt la dau lon hon 
+
+then
+
+   echo "Your age is enough"
+
+
+
+else 
+
+   echo "Sorry your age is not enough"
+
+fi
+
+
+
+- vi du
+
+[root@grafana ~]# cat ifand.sh
+
+#! /bin/bash
+
+VAR=5
+
+COUNT=80
+
+if [  $VAR -eq 5 ]; then
+
+            echo "Number equal 5"
+
+fi 
+
+if [ $VAR -gt 5 ]; then
+
+            echo "Number greate than 5"
+
+fi 
+
+if [ $VAR -eq 5 ] && [ $COUNT -le 100 ]; then
+    
+            echo "Staement is true"
+
+fi 
+ 
+
+
+
+--- String comparison----
+
+so sanh chuoi
+1. ["$STR1"="$STR2"] 
+2. ["$STR1"!="$STR2"]
+
+- vi du: 
+
+[root@grafana ~]# cat ifand.sh 
+
+#! /bin/bash
+
+VAR=5
+
+COUNT=80
+
+if [  $VAR -eq 5 ]; then
+
+            echo "Number equal 5"
+
+fi 
+
+if [ $VAR -gt 5 ]; then
+
+            echo "Number greate than 5"
+
+fi 
+
+if [ $VAR -eq 5 ] && [ $COUNT -le 100 ]; then
+    
+            echo "Staement is true"
+
+fi 
 
 
 
 
+- vi du 2
+
+[root@grafana ~]# cat ifand.sh 
+
+#! /bin/bash
+
+VAR=5
+
+COUNT=80
+
+if [  $VAR -eq 5 ]; then
+            echo "Number equal 5"
+
+fi 
+
+if [ $VAR -gt 5 ]; then
+            echo "Number greate than 5"
+
+fi 
+
+if [ $VAR -eq 5 ] && [ $COUNT -le 100 ]; then
+    
+            echo "Staement is true"
+
+fi
 
 
+- vi du 3:
 
-
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 
