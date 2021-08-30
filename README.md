@@ -672,11 +672,241 @@ fi
 
 - vi du 3:
 
- 
+test if string is empty
+
++ [-z "$STR1"] return true if STR1 holds an empty string
++ [[ -z $STR1]] possible, but no widely used - co the sai dc , nhung ko dc su dung rong rai
+
+
+[root@grafana ~]# cat string-zero.sh 
+
+#! /bin/bash
+
+
+STR1="abc"
+
+if [ -z "$STR1" ]; then
+
+echo "String emptry"
+
+else
+
+echo "String not empty"
+
+fi
+
+  
+
+- vi du 4
+
+[root@grafana ~]# cat string-check-input-empty.sh 
+
+#! /bin/bash
+
+
+#check string input by user
 
 
 
+echo -n "Input your name: "
 
+read NAME
+
+if [ -z $NAME ]; then
+
+ echo "You must input some characters"
+
+else 
+
+ echo "Your name is : $NAME"
+
+
+fi
+
+
+
+----Wildcards (globbing patterns)-----
+
++Used by/for
++cp
++rm
++ls
++mv
++Bash string comarison
++... many more
+
+- la 1 dang shorcut - symbol 
+
+
+
+Character
+
+Description
+
+Example
+
+*
+
+Matches any number of characters. You can use the asterisk (*) anywhere in a character string.
+
+wh* finds what, white, and why, but not awhile or watch.
+
+?
+
+Matches a single alphabet in a specific position.
+
+b?ll finds ball, bell, and bill.
+
+[ ]
+
+Matches characters within the brackets.
+
+b[ae]ll finds ball and bell, but not bill.
+
+!
+
+Excludes characters inside the brackets.
+
+b[!ae]ll finds bill and bull, but not ball or bell.
+
+Like “[!a]*” finds all items that do not begin with the letter a.
+
+-
+
+Matches a range of characters. Remember to specify the characters in ascending order (A to Z, not Z to A).
+
+b[a-c]d finds bad, bbd, and bcd.
+
+#
+
+Matches any single numeric character.
+
+1#3 finds 103, 113, and 123.
+
+-vi du:
+
+ls -la *.sh
+-rw-r--r--. 1 root root  22 Aug 20 10:43 devops.sh
+-rwxr-xr-x. 1 root root 158 Aug 26 16:08 filescrip.sh
+-rwxr-xr-x. 1 root root 175 Aug 27 08:59 if-command.sh
+-rwxr-xr-x. 1 root root 258 Aug 27 09:07 ifand.sh
+-rwxr-xr-x. 1 root root 134 Aug 27 08:13 let-command.sh
+-rwxr-xr-x. 1 root root 190 Aug 27 16:15 string-check-input-empty.sh
+-rwxr-xr-x. 1 root root 222 Aug 27 09:25 string-compairsion.sh
+-rwxr-xr-x. 1 root root 108 Aug 27 16:05 string-zero.sh
+
+- vi du 2:
+
+[root@grafana ~]# ls -la {*.sh,*abc}
+-rw-r--r--. 1 root root   0 Aug 30 13:46 1.abc
+-rw-r--r--. 1 root root  22 Aug 20 10:43 devops.sh
+-rwxr-xr-x. 1 root root 158 Aug 26 16:08 filescrip.sh
+-rwxr-xr-x. 1 root root 175 Aug 27 08:59 if-command.sh
+-rwxr-xr-x. 1 root root 258 Aug 27 09:07 ifand.sh
+-rwxr-xr-x. 1 root root 134 Aug 27 08:13 let-command.sh
+-rwxr-xr-x. 1 root root 190 Aug 27 16:15 string-check-input-empty.sh
+-rwxr-xr-x. 1 root root 222 Aug 27 09:25 string-compairsion.sh
+-rwxr-xr-x. 1 root root 108 Aug 27 16:05 string-zero.sh
+
+
+tim gom 2 dieu kien
+
+xoa, tao file ap dung tat ca
+
+
+
+- vi du 3:
+
+[root@grafana ~]# cat list-str.sh 
+#! /bin/bash
+
+#list file same same
+
+set -x 
+
+# set -x de hien log khi chay file bash
+
+STR=file1
+
+if [[ $STR == file[0-3] ]]; then
+     rm -rf $STR
+
+fi
+
+
+
+- vi du 4:
+
+[root@grafana ~]# cat list-str-equal.sh 
+#! /bin/bash
+
+#list file same same
+
+set -x 
+
+# set -x de hien log khi chay file bash
+
+STR="devops.sh"
+
+if [[ $STR == "*.sh" ]]; then
+     ls -la $STR
+
+fi
+
+
+
+- vi du 4
+
+[root@grafana ~]# ls -la !#$  
+
+[root@grafana ~]# ls -la [noidung chua trong file can tim]$
+
+[root@grafana ~]# ls -la hello$
+
+- vi du 5:
+
+[root@grafana ~]# cat check-file.sh 
+#! /bin/bash
+
+#echo "Check if file existing"
+
+FILE=file1
+
+if [ -e $FILE ]; then
+   ls -la $FILE
+
+else 
+
+  echo "File is not existing"
+
+fi
+
+- vi du 6:
+
+[root@grafana ~]# cat check-file-regular.sh 
+#! /bin/bash
+
+#echo "Check file if regular file"
+
+echo "Input name of file you wanna check"
+
+read FILE
+
+
+if [ -e $FILE ]; then
+   ls -la $FILE
+
+else 
+
+  echo "File is not existing"
+
+fi
+
+
+: tu nhap bien de ra lenh
+
+
+- vi du 7
 
 
 
