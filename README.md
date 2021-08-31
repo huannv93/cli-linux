@@ -909,4 +909,70 @@ fi
 - vi du 7
 
 
+[root@grafana ~]# cat check-file-dicretory.sh 
+#! /bin/bash
+
+#echo "Check file if regular file"
+
+set -x
+
+echo "Input name of file you wanna check"
+
+read FILE
+
+
+if [ -d $FILE ]; then
+ 
+# d: dicrectory
+# x : excitue file
+
+   ls -la $FILE
+    
+   echo "Yourfile is dicrectory"
+
+else 
+
+  file $FILE
+
+  echo "Your File is not dorectory"
+
+fi
+
+
+- vi du 8
+
+[root@grafana ~]# cat check-file-both-read-write.sh 
+#! /bin/bash
+
+#echo "Check file if regular file"
+
+set -x
+
+echo "Input name of file you wanna check"
+
+read FILE
+
+
+if [ -w $FILE ] && [ -r $FILE ];then
+
+   ls -la $FILE
+    
+   echo "Yourfile is okay with both permission"
+
+else 
+
+  ls -la $FILE
+
+  echo "Your File is not full permission"
+
+  echo "let me add read and write permission to your file"
+
+  chmod +rw $FILE
+
+fi
+
+
+- vi du 9:
+
+ check-existing-dicrectory.sh  
 
