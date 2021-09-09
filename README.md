@@ -976,3 +976,101 @@ fi
 
  check-existing-dicrectory.sh  
 
+
+
+
+
+---- TOOA02- buoi 08-----------
+
+-----------------Packer & Vagrant ---------
+
+--Vagrant----
+
+What is Vagrant ?
+
+1. Khi muon tan dung nen tang phan cung, de chia phan cung. vd : 8gb chia ra
+2. Tao ra moi truong devement nhanh chong
+
+V0agrant giup build cac vm : kieu co 1 cau lenh tao nhieu may ao tren EXSi, AWS  nhanh chong, tao VM bang code, ko dung web bang tay nhu bt
+
+- code toi uu , du option khi nao may ao : ram, cpu, card mang, chon file iso
+
+
+- How to setup, install:
+
+https://www.vagrantup.com/docs/installation
+
+https://www.vagrantup.com/downloads
+
+
+--  install plugin :
+vagrant plugin install aws
+
+vagrant plugin uninstall aws
+
+-- check xem vagrant co support ha tang cua minh ko :
+
+https://vagrant-lists.github.io/
+
+
+---Boxes:
+la nhung image de tao os ( giong iso truyen thong)
+
+The Vagrant cloud Box repository
+
+https://app.vagrantup.com/boxes/search
+
+quan ly box da tai ve : huannvs-Mac-mini:~ huannv$ vagrant box list
+
+add box tai xuong tu repotiry:
+
+vagrant box add centos/7
+
+
+--- The vagrant file :
+
+vagrant init geerlingguy/ubuntu2004  : cai dat
+
+
+vi Vagrantfile 
+
+vagrant up
+
+vagrant validate  : check trang thai
+
+may local phai co hypervy, phan mem ao hoa de no trien khai len
+
+vagrant ssh-config  : cau hinh theo thong  ssh vao may ao 
+
+vagrant ssh  <hostname> : la login vao theo hostname default
+
+
+vagrant status 
+
+vagrant halt : shutdown nong
+
+vagrant global-status
+
+vagrant reload : restart lai vm
+
+vagrant destroy <hostname>   : delete vm
+
+vagrant snapshot save [vm] <name>   : snapshot vm
+
+vagrant snapshot list 
+
+vagrant snapshot delete [vm] <name>
+
+
+
+
+
+
+
+
+
+0
+
+
+
+
