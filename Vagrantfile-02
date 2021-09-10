@@ -1,0 +1,21 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+       config.vm.box = "geerlingguy/ubuntu2004"
+       config.vm.define :node1 do |node1|
+       node1.vm.hostname = "huannv"
+       node1.vm.network "forwarded_port", guest:22, host: 2222, protocol: "tcp"
+      end
+
+       config.vm.box = "geerlingguy/centos7"
+       config.vm.define :node2 do |node2|
+       node2.vm.hostname = "huannv"
+       node2.vm.network "forwarded_port", guest:22, host: 2223, protocol: "tcp"
+      end
+
+
+
+end
+

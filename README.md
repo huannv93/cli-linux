@@ -993,6 +993,9 @@ What is Vagrant ?
 
 V0agrant giup build cac vm : kieu co 1 cau lenh tao nhieu may ao tren EXSi, AWS  nhanh chong, tao VM bang code, ko dung web bang tay nhu bt
 
+ co the cai dat vagrant truc tiep tren ESXI ... de trien khai nhanh vm nhu co the cai dat vagrant o may mac/win client roi c
+ode config ket noi den ESXi ... de trien khai
+
 - code toi uu , du option khi nao may ao : ram, cpu, card mang, chon file iso
 
 
@@ -1024,15 +1027,15 @@ quan ly box da tai ve : huannvs-Mac-mini:~ huannv$ vagrant box list
 
 add box tai xuong tu repotiry:
 
-vagrant box add centos/7
-
+vagrant box add geerlingguy/ubuntu2004
+vagrant box add geerlingguy/centos7
 
 --- The vagrant file :
 
 vagrant init geerlingguy/ubuntu2004  : cai dat
 
 
-vi Vagrantfile 
+vi Vagrantfile  : thiet lap cau hinh de tao may ao 
 
 vagrant up
 
@@ -1061,6 +1064,51 @@ vagrant snapshot list
 
 vagrant snapshot delete [vm] <name>
 
+
+
+---Networking----
+
+Port Forwarding: 
+
+Vagrant.configure("2") do |config|
+  config.vm.network "forwarded_port", guest: 2003, host: 12003, protocol: "tcp"
+  config.vm.network "forwarded_port", guest: 2003, host: 12003, protocol: "udp"
+end
+
+
+xem chi tiet cau hinh trong file Vagrantfile 
+
+
+- Private network: https://www.vagrantup.com/docs/networking/private_network
+- Public Network : https://www.vagrantup.com/docs/networking/public_network
+
+
+
+---Provisioning----
+
+Trien khai auto het len dc chi dinh trong fileconfig : shell
+
+giong dockercompose
+
+- Shell : chay ket hop vs bashshell
+Vagrant.configure("2") do |config|
+  config.vm.provision "shell",
+    inline: "echo Hello, World"
+end
+
+
+- File 
+copy file tu source vao ben trong vm 
+
+Vagrant.configure("2") do |config|
+  # ... other configuration
+
+  config.vm.provision "file", source: "~/.gitconfig", destination: ".gitconfig"
+end
+
+- Ansible : 
+
+phai define file playboo.yml
 
 
 
