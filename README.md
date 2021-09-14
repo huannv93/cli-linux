@@ -1,5 +1,8 @@
 # cli-linux
 
+ ps -ef | grep grafana
+#tim service 
+
 hostnamectl 
 
 timedatectl set-timezone Asia/Ho_Chi_Minh
@@ -1116,8 +1119,69 @@ phai define file playboo.yml
 
 
 
+----function----
 
-0
+
+
+
+---- AWK----
+
+- tim kiem nhung file theo dong chua patterns 
+- thuc hien command trong patterns do
+- example : https://www.tutorialspoint.com/awk/awk_basic_examples.htm
+
+- awk '{print $3 "\t" $4}' marks.txt
+
+- awk '/a/ {print $0}' marks.txt
+
+- awk '/a/' marks.txt  : tim co chu cai la a
+
+--- SED-----
+
+- https://linuxconfig.org/learning-linux-commands-sed
+- sed OPTIONS... [SCRIPT] [INPUTFILE...] 
+- sed 's/unix/linux/' geekfile.txt
+
+- echo "one five three" | sed 's/five/two/'    : thay file = two
+
+- vd: thay doi tu trong file huan.txt
+echo "one five three" > huan.txt
+
+sed -i 's/five/two/g' huan.txt
+
+ket qua : 
+
+[root@grafana cli-linux]# cat huan.txt
+
+one two three
+
+- g : thay tat ca nhung tu five thanh two
+
+- ko g : chi chu cai dau tien tim duoc
+
+-i : save lai file luon
+- 
+
+
+--- REGEX-----
+
+
+./regex-ip-check.sh 8.8.8.8
+
+[root@grafana cli-linux]# ./regex-ip-check.sh fssfijsisf8.8.8.8hsdhdshds
+
+nhap ip ko co gia tri nhung scrip loc ra dc regex ip va ping thanh cong
+
+viet scrip check ping ip
+
+
+
+---het bai shell script-----
+
+
+
+
+---------GIT--------------
 
 
 
