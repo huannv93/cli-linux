@@ -32,6 +32,11 @@ ll  --help
 
 exam: ln -s devops.sh huan-shortcut.sh  || tao shortcut cho file devops
 
+---sync toan bo thu muc nay sang thuc muc khac
+
+rsync :
+#cd /user/foder1:
+rsysn -va . /user/foder2
 
 
 
@@ -1179,10 +1184,136 @@ viet scrip check ping ip
 ---het bai shell script-----
 
 
+-----bai T00A01-09-----
+
+ON TAP
+
+
+
 
 
 ---------GIT--------------
 
+--T00A01-10---
+
+install git
+
+git version
+
+git add .
+
+git init /duongdantoifolder/
+
+git init : taoj folder cho git
+
+- cat /root/gittest/.git/HEAD
+- [root@grafana .git]# cat HEAD
+- ref: refs/heads/master    : dang o brand master
+- hook : chua toan bo scripts de automation 1 so task o git
+- index : file is what keeps track of the items
+- git status : xem thong tin thay doi
+- git commit -m "update"
+- git config : configure various elements in your git
+- git config --list : thay thong tin account cuoi dung xac thuc vs git
+- cat .git/config
+-
+- mkdir gittest
+- cd gittest
+- git init
+- echo "This message is first" >> REAMME.md
+- git add .
+- [root@grafana gittest]# git status
+# On branch master   : dang o branch master
+#
+# Initial commit  : chua commit
+#
+# Changes to be committed:
+#   (use "git rm --cached <file>..." to unstage)
+#
+#	new file:   REAMME.md   : co file moi vua tao
+#
 
 
+- check status
++ git status
++ git status -s  : short ngan gon
++ git status -v  : 
++ man git-status
 
+[root@grafana gittest]# git status -s
+A  REAMME.md   : A : add
+? chua biet hanh dong
+AM: add moi va dc monifie
+
+
+- git commit -m "Commit Message" : 
+- git commir -a -m "message"
+- man git-commit 
+- cat .git/COMMIT_EDITMSG
+
+
+- Ignoring Certain File types
++ .git/info/exclude  : origianl file that contains the pattterns that git will not track
++ .gitignore
++ git check-ingore <pattern>
+
++ touch .gitingnore
++ echo "build/*" >> .gitignore    : tat ca cac file trong thu muc build thi git se ko tracking
+
+- Using Tags:
++ git tag -a <tagname> -m <message> : create an annotated tag
++ git tag : view all tags for the repository
++ git tag <tagname> -m <message>
++ git tag -d <tagname> -m <message>  : delete tag
+
+[root@grafana gittest]# git tag -a v1.0.1 -m "frist version"
+
+git tag : list cac tag
+
+[root@grafana gittest]# git show v1.0.1
+
+ls /git/refs/tags
+
+
+- Using Branches:
++ git branch <branch name>  : create a new branch of the git project
++ git checkout <branch name> : switch to other branch
++ git branch -d <branch name> : xoa 1 branch
++ HEAD: pointer to the current branch being worked on, can be use git log and git status to view which branch HEAD is pointing to
++ man git-branch : local documentation for the git-branch command
++ man git-checkout : local documentation for the git-checkout command
++ ls .git/refs/heads
+
+- Merging Branches:
++ git merge <branch muon merge ve master>
++ man git-merge
+
+- Rebasing
++ git revert : revert a commit in the project : remove 1 commit
+
+- Suing the "diff" command:
++ git diff
+
+- Git Logs:
++ git log : view the git repository history
++ git log --graph
++ git log --stat
+
+- Cloning Local Repo
++ git clone <local repo> <new repo>
++ man git-clone
+
+- Cloning Remote Repositories:
++ git clone <remote ULR>
++ man git-clone
+
+- Tracking Remote Repositories:
++ git remote -v   : show the remote server that are being tracked for the current
++ git fetch : xem su thay doi co gi moi tren remote repositories , lay moi nhat ve
+
++ man git-fetch
++ man git-remote
+
+- Pushing to Remote Repositories:
++ git push -u <remote> <local branch> : pushes local changes to the upstrem git reposetories
++ man git push
