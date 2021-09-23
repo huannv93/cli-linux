@@ -1317,3 +1317,16 @@ ls /git/refs/tags
 - Pushing to Remote Repositories:
 + git push -u <remote> <local branch> : pushes local changes to the upstrem git reposetories
 + man git push
+
+git remote add origin 'https://github.com/huannv93/cli-linux.git'
+
+- Install gitlab:
++ free : tu dung
++ enterprise : goi support
++ Componets include: Git, Redis. NGINX. Chef, Po
+
+sudo EXTERNAL_URL="https://dng.gearinc.net" yum install -y gitlab-ee
+
+
+
+---- Vagrant-----
