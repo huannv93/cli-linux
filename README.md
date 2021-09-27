@@ -1329,4 +1329,83 @@ sudo EXTERNAL_URL="https://dng.gearinc.net" yum install -y gitlab-ee
 
 
 
----- Vagrant-----
+---- Asible-----
+https://viblo.asia/p/phan-1-tim-hieu-ve-ansible-4dbZNxv85YM
+
+- Inventories:
++ hostname
++ ip address
+
+- Module:example
++ Ping module
++ Setup module
++ Yum module : quan ly install application
++ Service: Control Daemons
++ User: add, delete user
++ Copy : Copy files.
++ File
++ Git
+
+- Variables :
+https://viblo.asia/p/phan-2-tim-hieu-ve-ansible-YWOZry8rKQ0
+- Fact: tự detect được OS và lựa chọn cài yum/apt. Ở đây ta sẽ dùng Fact để lấy thông tin và dùng when để thiết lập varriable.
++ ansible localhost -m  setup : lay thong tin localhost
++ #ansible 192.168.1.59 -m setup
+
+- Play and Playbook :
+ export ASNSIBLE_CONFIG=/home/huannv/ : thay doi duong dan file ansible.cfg mac dinh
+mac dinh nam o : /etc/ansible
+
+
+
+
+- Ad-Hoc Ansible commands : thuc hien lenh nao do ko can thong qua playbook
+https://docs.ansible.com/ansible/latest/user_guide/intro_adhoc.html
+
+ansible [pattern] -m [module] -a "[module options]"  
+
++ dung de collect thong tin
++ ngan gon sai 1 lan , ko can dung playbook ruom ra
+
+
+- Demo: tao 3 host ( ansbible , node1 , node2) bang vagrant cho vip
+
++ cai ansible tren host ansible
++ tao cac ket noi authen : user ansible, copy ssh authen cho node1,1 ssh-copy-id
++ dinh danh cac host tren file : /etc/hosts
++ tien hanh CI/CD on host ansible de CD/CI cac host node1,2 tu dong nhu tao user, tao folder... bang Inventory bang cac module co san
+ansible node1 -i inventory -m ping   : -i co nghia la lay file enventory custom ngay tai folder dang thuc hien, neu ko co se lay trong thu muc default
+
+ansible node1 -i inventory -m setup   : get thong tin host
+
+ansible node2 -i inventory -b -m  yum -a "name=vim state=latest" : install vim tren host
+
+ansible node2 -i inventory -b -m  yum -a "name=vim state=absent"   : remove vim tren host
+
+ansible all -i inventory -b -m file -a "path=home/ansible/devops state=directory" : tao dircectory devops tren all cac host
+
+ansible node1 -i inventory -b -m user -a "name=huannv"   : tao user
+
+ansible node2 -i inventory -b -m user -a "name=huannv append=yes group=root" : tao user + add group cho user
+
+cat /etc/passwd : de check user
+
+-b : de bo qua nhap pass khi chay sudo
+
+sudo visudo  : add them phan quyen ko hoi pass- without passwd cho user
+
+## Same thing without a password
+# %wheel        ALL=(ALL)       NOPASSWD: ALL
+ansible ALL=(ALL)  NOPASSWD: ALL
+
+
+
+
+
+
+
+
+
+
+
+
