@@ -1,5 +1,12 @@
 # cli-linux
 
+vi .ssh/config : cau hinh file config
+
+ssh-copy-id -i user@host
+
+scp namefileneedtocopy user@host:/destination
+
+
  ps -ef | grep grafana
 #tim service 
 
