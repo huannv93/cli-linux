@@ -6,6 +6,8 @@ ssh-copy-id -i user@host
 
 scp namefileneedtocopy user@host:/destination
 
+scp -i aws-chuongnguyen.pem ubuntu@ec2-16-162-19-156.ap-east-1.compute.amazonaws.com:/home/ubuntu/wg0-client-huanmacbook.conf /Users/huannv/Downloads
+
 
  ps -ef | grep grafana
 #tim service 
