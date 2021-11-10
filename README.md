@@ -1408,7 +1408,12 @@ sudo visudo  : add them phan quyen ko hoi pass- without passwd cho user
 ansible ALL=(ALL)  NOPASSWD: ALL
 
 
-
+-- NMAP ---
+ sudo nmap -sTU -O IP-address-Here
+ 
+ sudo nmap -p- IP-address-Here  : scan 65000 port
+ 
+ 
 
 
 
