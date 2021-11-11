@@ -1409,7 +1409,8 @@ ansible ALL=(ALL)  NOPASSWD: ALL
 
 
 -- NMAP ---
- sudo nmap -sTU -O IP-address-Here
+ 
+ sudo nmap -sTU -O IP-address-Here   // scan tcp, udp
  
  sudo nmap -p- IP-address-Here  : scan 65000 port
  
