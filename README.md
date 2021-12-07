@@ -57,6 +57,11 @@ rsysn -va . /user/foder2
 
 
 ----lenh timkiem----
+
+
+grep -r "string to be searched"  /path/to/dir 
+
+lenh grep noi dung trong file ; vd  : grep -r "Exception" .  tim text Exception trong all file co trong folder hien tai  . dau . la lay all forder htai
 find --help || chi tiet hon
 
 find /root/huannguyen -name *.sh -print   || tim file co duoi .sh
