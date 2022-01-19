@@ -1,5 +1,34 @@
 # cli-linux
 
+https://quickref.me/ssh  
+
+web command on linux
+
+Copies from remote to local
+
+$ scp user@server:/dir/file.ext dest/
+
+Copies between two servers
+
+$ scp user@server:/file user@server:/dir
+
+Copies from local to remote
+
+$ scp dest/file.ext user@server:/dir
+
+Copies a whole folder
+
+$ scp -r user@server:/dir dest/
+
+Copies all files from a folder
+
+$ scp user@server:/dir/* dest/
+
+Copies from a server folder to the current folder
+
+$ scp user@server:/dir/* .
+
+
 vi .ssh/config : cau hinh file config
 
 ssh-copy-id -i user@host
