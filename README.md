@@ -111,7 +111,13 @@ find /root/huannguyen -mtime 4 // tim file chinh sua cach day 4 ngay
 
  grep -r "Exception" 
  
+ grep -i "Exception" : -i : ko can phan biet in hoa hay in thuong
+ 
+ grep -i -w "Exception" : -w : tim dung day du tu khoa , ko du
+ 
  grep port /etc/ssh/sshd_config  : tim tu khoa port trong file sshd_config
+ 
+ 
 
 ---tim thong tin file --
 file 
