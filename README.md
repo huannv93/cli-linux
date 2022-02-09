@@ -109,6 +109,10 @@ find /root/huannguyen -name 'devops.sh'
 
 find /root/huannguyen -mtime 4 // tim file chinh sua cach day 4 ngay
 
+ grep -r "Exception" 
+ 
+ grep port /etc/ssh/sshd_config  : tim tu khoa port trong file sshd_config
+
 ---tim thong tin file --
 file 
 
