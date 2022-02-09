@@ -1454,13 +1454,13 @@ ansible ALL=(ALL)  NOPASSWD: ALL
 
 -- NMAP ---
  
- '''sh
+ ```sh
  sudo nmap -sTU -O IP-address-Here   // scan tcp, udp
  
  sudo nmap -p- IP-address-Here  : scan 65000 port
  
  sudo nmap -p 1196 -sU 14.177.64.76  : scan udp port 1196
- '''
+ ```
  
 
 
