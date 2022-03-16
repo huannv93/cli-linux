@@ -1453,10 +1453,34 @@ ansible ALL=(ALL)  NOPASSWD: ALL
  
  
 -----**Docker**-----
+ - docker ps : list container dang chay
+ - docker ps -a : list container da tung chay
+ - docker run -it --name huannv "imagename"
+ + -i : vao interface ssh luon
+ + -t 
+ docker run --help to more detail
  
+ - docker run -t -d --name huannv "imagename"
+ + -d : Run container in background and print container ID
  
+ - docker rm
+ - docker container start <container ID>
+ - docker container stop <container ID>
+ - docker exec -it <container D>    : login vao container
+ + docker exec <container ID > ping 8.8.8.8 : test ping tu container ko can ssh vao container
+docker exec --help : for more detail
+ -  docker cp <dir/file> <container ID>  : copy file o ngoai vao container
+ -  docker cp CONTAINER:SRC_PATH DEST_PATH|-
+ docker cp --help
 
 
+Usage:  docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH|-
+	       docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH
+ -  docker build -t huannv93/testpushimage:v1 .   // chu y co dau . tro dockerfile o currenly folder .  // build image
+ -  docker push huannv93/testpushimage:v1      // push len registry 
+ 
+ 
+ 
 -- NMAP ---
  
  ```sh
