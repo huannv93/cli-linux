@@ -1450,6 +1450,11 @@ sudo visudo  : add them phan quyen ko hoi pass- without passwd cho user
 ## Same thing without a password
 # %wheel        ALL=(ALL)       NOPASSWD: ALL
 ansible ALL=(ALL)  NOPASSWD: ALL
+ 
+ 
+-----**Docker**-----
+ 
+ 
 
 
 -- NMAP ---
