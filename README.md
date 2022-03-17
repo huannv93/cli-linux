@@ -1475,12 +1475,22 @@ docker exec --help : for more detail
 
 
 Usage:  docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH|-
-	       docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH
+	
+        docker cp [OPTIONS] SRC_PATH|- CONTAINER:DEST_PATH
+	
  -  docker build -t huannv93/testpushimage:v1 .   // chu y co dau . tro dockerfile o currenly folder .  // build image
  -  docker push huannv93/testpushimage:v1      // push len registry 
- 
- 
- 
+ -  docker rm <container ID>  : remove container
+ -  docker stats <container ID>  : xem cpu, memory ram cua container ID
+ -  docker run -d --name web01 -p 80:8080 huannv93/web:v1 // port host ben trai, port container ben phai
+ - 
+WORKDIR /home/node/app  : dinh danh thu muc lam viec 
+	
+COPY package*.json ./   : copy file vao ./ nghia la copy vao Workdir
+	
+- docker inspect <imagename:tag>  : xem port expose o tren image, ko biet sai port bao nhieu khi k co dockerfile or docker compose
+	
+	
 -- NMAP ---
  
  ```sh
