@@ -1489,7 +1489,33 @@ WORKDIR /home/node/app  : dinh danh thu muc lam viec
 COPY package*.json ./   : copy file vao ./ nghia la copy vao Workdir
 	
 - docker inspect <imagename:tag>  : xem port expose o tren image, ko biet sai port bao nhieu khi k co dockerfile or docker compose
+- ADD:  copy neu nhu gap file tar , file nen ---> se giai nen ra noi dung roi copy ra luon  +++ co the download source tu url tu internet ve copy
+- COPY: copy y nguyen file tu may host vao
 	
+- CMD : thuc thi lenh khi container dc build len. 
+	
+- Workdir: thu muc da ton tai roi, muon thuc hien command, action... o thuc muc nay !
+
+- Mkdir: tao thuc muc
+	
+    **Image Management**
+	
+- docker pull <image>
+- docker image ls
+- docker push <image>
+- docker rm <image>  : xoa image
+- docker save <image> : luu image bang file tar
+- docker tag <image>:tag huannv93/image:latest : doi ten image va tag de push len registry.
+- docker inspect <imagename:tag> :  xem port expose o tren image, ko biet sai port bao nhieu khi k co dockerfile or docker compose
+
+	
+	
+	**Docker Compose**
+	https://youtu.be/NGc84oKXgWw?list=PL03dlYelZoZAKCytkXYsDMF85E0K1g8Eu&t=4010
+- Run and build Muti-Image, Muti-Container
+- 
+
+
 	
 -- NMAP ---
  
