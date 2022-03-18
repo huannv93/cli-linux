@@ -1513,8 +1513,58 @@ COPY package*.json ./   : copy file vao ./ nghia la copy vao Workdir
 	**Docker Compose**
 	https://youtu.be/NGc84oKXgWw?list=PL03dlYelZoZAKCytkXYsDMF85E0K1g8Eu&t=4010
 - Run and build Muti-Image, Muti-Container
-- 
+- networks : build cac container chung vlan ( kieu vay)
+	+ docker network create --driver bridge <Networkname>  ( co 3 loai network : bridge,...  ) // dung bt
+	+ network:
+	      nodeapp-network:
+	          driver: bridge
+	
+	dung trong docker-compose
 
+- build: build image tu code cua app va dockerfile
+- environment : tao ra bien moi truong
+- image: dua vao base image
+- port : expose ra port bao nhieu
+- volume: 
+- depends_on : phu thuoc vao service nào, thì build service đó trc rồi mới build toi minh . vi du phai start db trc roi moi start web
+-  environment:
+      - NODE_ENV=production
+      - APP_VERSION=1.0
+	
+Neu muon tro enviroment ra 1 file luu cac gia tri tao them truong :
+- env_file:
+	- ./settings.env
+	
+- docker-compose up -d
+
+- docker-compose down : xoa tat ca cac service
+	
+- docker-compose stop <container ID>
+- docker-compose up -d --no-deps [service]
+	--no depends: ko up lai service database (vi no dang chay, mac dinh code docker-compose la depends database trc) 
+	docker-compose up -d --no-deps nodeapp
+- docker-compose ps
+- docker-compose stop
+- docker-compose start
+- docker-compose rm
+
+- docker-compose logs : xem log
+
+- docker-compose logs -f : xem log realtime
+	
+- docker-compose logs <servicename> : xem log cu the tung service
+
+- docker-compose logs --folow
+	
+- docker exec -it <containerID> sh : la dung bt
+- docker-compose exec <servicename> sh : dung voi compose
+	 
+
+	
+	
+- docker compose ps : chi tiet hon docker ps or docker ps -a
+
+- 
 
 	
 -- NMAP ---
