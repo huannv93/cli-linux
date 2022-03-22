@@ -1601,10 +1601,17 @@ WantedBy=multi-user.target
 check port dang mo tren server linux:
 ```
 	netstat -nlpt
+	netstat -pntl
 ```
 	Port mo nhung fw chan thi cung ko truy cap dc
 	
-disable fw di
+disable fw di or allow ports can thiet
+```
+      sudo firewall-cmd --list-service
+      sudo firewall-cmd --add-port 3000/tcp --permanent
+      sudo firewall-cmd --reload
+	
+```
 
 
 
