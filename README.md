@@ -1578,10 +1578,11 @@ Neu muon tro enviroment ra 1 file luu cac gia tri tao them truong :
  ```
 	
 	
-tao service cho app de status, start, stop 
-	- https://youtu.be/pn0ETuPZ64U?list=PL03dlYelZoZAKCytkXYsDMF85E0K1g8Eu&t=6162
-	- https://www.shubhamdipt.com/blog/how-to-create-a-systemd-service-in-linux/
-	- sudo vi /etc/systemd/system/huannv-service.service
+**tao service cho app de status, start, stop **
+	
+- https://youtu.be/pn0ETuPZ64U?list=PL03dlYelZoZAKCytkXYsDMF85E0K1g8Eu&t=6162
+- https://www.shubhamdipt.com/blog/how-to-create-a-systemd-service-in-linux/
+- sudo vi /etc/systemd/system/huannv-service.service
 ```
 [Unit]
 Description=<description about this service>
@@ -1597,6 +1598,13 @@ WantedBy=multi-user.target
 	
 ```
  
+check port dang mo tren server linux:
+```
+	netstat -nlpt
+```
+	Port mo nhung fw chan thi cung ko truy cap dc
+	
+disable fw di
 
 
 
