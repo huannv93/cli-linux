@@ -1576,6 +1576,26 @@ Neu muon tro enviroment ra 1 file luu cac gia tri tao them truong :
  
  sudo nmap -p 1196 -sU 14.177.64.76  : scan udp port 1196
  ```
+	
+	
+tao service cho app de status, start, stop 
+	- https://youtu.be/pn0ETuPZ64U?list=PL03dlYelZoZAKCytkXYsDMF85E0K1g8Eu&t=6162
+	- https://www.shubhamdipt.com/blog/how-to-create-a-systemd-service-in-linux/
+	- sudo vi /etc/systemd/system/huannv-service.service
+```
+[Unit]
+Description=<description about this service>
+
+[Service]
+User=<user e.g. root>
+WorkingDirectory=<directory_of_script e.g. /root>
+ExecStart=<script which needs to be executed>
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+	
+```
  
 
 
