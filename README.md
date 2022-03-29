@@ -2,6 +2,12 @@
 
 https://quickref.me/ssh  
 
+https://www.thegioididong.com/game-app/tong-hop-cac-phim-tat-trong-visual-studio-giup-lap-trinh-1314558
+
+`` CTRL + END `` : ve cuoi dong code
+`` CTRL + A `` : ve dau dong code
+`` commnad + / : comment , uncomment nhanh doan code
+
 web command on linux
 
 Copies from remote to local
