@@ -1619,7 +1619,7 @@ disable fw di or allow ports can thiet
 	
 ```
 
-
+bôi den doan code --> nhan phim TAB de di chuyen qua tra , shilt + TAB huong qua phai
 
 
 
